@@ -1,0 +1,725 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    flex: 1;
+    position: relative;
+}
+
+/* Watermark */
+.watermark {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    font-size: 5rem;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.05);
+    z-index: -1;
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.language-selector {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.lang-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.lang-btn.active {
+    background: white;
+    color: #1e3c72;
+    font-weight: bold;
+}
+
+.lang-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Login Page */
+.login-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.login-card {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-header h2 {
+    color: #1e3c72;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.election-info h3 {
+    color: #2a5298;
+    margin-bottom: 5px;
+}
+
+.election-info p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #2a5298;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(42, 82, 152, 0.1);
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    min-height: 20px;
+}
+
+/* Button Styles */
+.btn-primary, .btn-secondary, .btn-tertiary, .btn-small, .btn-warning, .btn-danger {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(to right, #2a5298, #3a6bc9);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(42, 82, 152, 0.3);
+}
+
+.btn-secondary {
+    background: #f8f9fa;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.btn-secondary:hover {
+    background: #e9ecef;
+    transform: translateY(-2px);
+}
+
+.btn-tertiary {
+    background: transparent;
+    color: #2a5298;
+    border: 1px solid #2a5298;
+}
+
+.btn-tertiary:hover {
+    background: rgba(42, 82, 152, 0.1);
+}
+
+.btn-warning {
+    background: #f39c12;
+    color: white;
+}
+
+.btn-warning:hover {
+    background: #e67e22;
+}
+
+.btn-danger {
+    background: #e74c3c;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #c0392b;
+}
+
+.btn-small {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+}
+
+.form-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+/* Voting Page */
+.voter-info {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.voting-container {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.election-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.election-header h2 {
+    color: #1e3c72;
+    font-size: 1.8rem;
+}
+
+.timer {
+    background: #f8f9fa;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #2a5298;
+    border: 1px solid #ddd;
+}
+
+/* Candidates Grid */
+.candidates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.candidate-card {
+    background: white;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.candidate-card:hover {
+    border-color: #2a5298;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(42, 82, 152, 0.15);
+}
+
+.candidate-card.selected {
+    border-color: #27ae60;
+    background: linear-gradient(135deg, #f8fff9 0%, #e8f5e9 100%);
+}
+
+.candidate-symbol {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.candidate-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.candidate-party {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.candidate-id {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #f8f9fa;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #666;
+}
+
+.selected-candidate {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    border: 1px dashed #ddd;
+}
+
+.selected-candidate h3 {
+    color: #1e3c72;
+    margin-bottom: 15px;
+}
+
+.selected-info {
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.selected-info p {
+    color: #666;
+    font-style: italic;
+}
+
+.voting-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Admin Panel */
+.admin-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.tab-btn {
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    padding: 12px 24px;
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+    background: #2a5298;
+    color: white;
+    border-color: #2a5298;
+}
+
+.tab-btn:hover:not(.active) {
+    background: #e9ecef;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.form-section {
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.table-container {
+    overflow-x: auto;
+    margin-bottom: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background: #f8f9fa;
+    font-weight: 600;
+    color: #333;
+}
+
+tr:hover {
+    background: #f8f9fa;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card h4 {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.stat-card p {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2a5298;
+}
+
+.control-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.control-card {
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.control-card h3 {
+    color: #1e3c72;
+    margin-bottom: 15px;
+}
+
+.control-card p {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+/* Results Page */
+.chart-container {
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    height: 400px;
+}
+
+.winner-card {
+    background: linear-gradient(135deg, #fff9e6 0%, #ffeaa7 100%);
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    border: 2px solid #fdcb6e;
+    margin-bottom: 30px;
+}
+
+.winner-symbol {
+    font-size: 4rem;
+    background: white;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.winner-details h4 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.winner-details p {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.winner-stats {
+    display: flex;
+    gap: 20px;
+}
+
+.winner-stats span {
+    background: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    color: #2a5298;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+}
+
+.close-modal:hover {
+    color: #333;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+    justify-content: flex-end;
+}
+
+.success-modal {
+    text-align: center;
+    max-width: 400px;
+}
+
+.success-icon {
+    font-size: 4rem;
+    color: #27ae60;
+    margin-bottom: 20px;
+}
+
+.confirm-modal .candidate-card {
+    pointer-events: none;
+    margin: 20px 0;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-size: 0.9rem;
+    border-top: 1px solid #ddd;
+    margin-top: 30px;
+}
+
+.disclaimer {
+    background: #fff8e6;
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 30px;
+    border-left: 4px solid #f39c12;
+}
+
+.disclaimer h4 {
+    color: #e67e22;
+    margin-bottom: 5px;
+}
+
+.disclaimer p {
+    color: #666;
+    font-size: 0.85rem;
+}
+
+.disclaimer-small {
+    font-size: 0.8rem;
+    color: #999;
+    margin-top: 10px;
+}
+
+.instructions {
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.instructions h3 {
+    color: #1e3c72;
+    margin-bottom: 15px;
+}
+
+.instructions ol {
+    padding-left: 20px;
+}
+
+.instructions li {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+/* Print Page Specific */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    
+    .print-container, .print-container * {
+        visibility: visible;
+    }
+    
+    .print-container {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+}
