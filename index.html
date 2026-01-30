@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital EVM System - Login</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="icon" href="assets/evm-icon.png" type="image/png">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="watermark">Demo Digital EVM System</div>
+            <h1 id="login-title">Digital EVM System</h1>
+            <div class="language-selector">
+                <button id="lang-en" class="lang-btn active">English</button>
+                <button id="lang-hi" class="lang-btn">हिंदी</button>
+                <button id="lang-mr" class="lang-btn">मराठी</button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="login-container">
+                <div class="login-card">
+                    <div class="login-header">
+                        <h2 id="voter-login-title">Voter Login</h2>
+                        <div class="election-info">
+                            <h3 id="election-title">General Election 2024</h3>
+                            <p id="election-time">Voting: 7:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="login-form">
+                        <div class="form-group">
+                            <label for="voterId" id="voter-id-label">Voter ID Number</label>
+                            <input type="text" id="voterId" placeholder="Enter Voter ID" maxlength="12">
+                            <div class="error-message" id="voterId-error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="pin" id="pin-label">PIN / Password</label>
+                            <input type="password" id="pin" placeholder="Enter PIN" maxlength="6">
+                            <div class="error-message" id="pin-error"></div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button id="login-btn" class="btn-primary">Login to Vote</button>
+                            <button id="admin-login-btn" class="btn-secondary">Admin Panel</button>
+                            <button id="view-results-btn" class="btn-tertiary">View Results</button>
+                        </div>
+                    </div>
+                    
+                    <div class="disclaimer">
+                        <h4>Disclaimer</h4>
+                        <p id="disclaimer-text">Demo Digital EVM System – For Educational and Practice Use Only. Not for real government elections.</p>
+                    </div>
+                </div>
+                
+                <div class="instructions">
+                    <h3 id="instructions-title">Instructions</h3>
+                    <ol id="instructions-list">
+                        <li>Enter your Voter ID and PIN to login</li>
+                        <li>You can vote only once per election</li>
+                        <li>Review your selection before confirming</li>
+                        <li>Voting will be locked after election end time</li>
+                        <li>Results will be available after voting ends</li>
+                    </ol>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="footer">
+            <p id="footer-text">Secure Digital Voting System &copy; 2024</p>
+        </footer>
+    </div>
+
+    <!-- Admin Password Modal -->
+    <div id="admin-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="admin-modal-title">Admin Authentication</h2>
+            <div class="form-group">
+                <label for="admin-password" id="admin-password-label">Admin Password</label>
+                <input type="password" id="admin-password" placeholder="Enter admin password">
+                <div class="error-message" id="admin-password-error"></div>
+            </div>
+            <button id="admin-access-btn" class="btn-primary">Access Admin Panel</button>
+            <button id="result-access-btn" class="btn-secondary">Access Results</button>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
