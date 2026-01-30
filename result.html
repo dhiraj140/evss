@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital EVM System - Election Results</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="icon" href="assets/evm-icon.png" type="image/png">
+    <!-- Chart.js for visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="watermark">Demo Digital EVM System</div>
+            <h1>Election Results</h1>
+            <div class="result-nav">
+                <button id="back-to-vote-from-results" class="btn-small">Back to Voting</button>
+                <button id="print-results-btn" class="btn-small">Print Results</button>
+                <button id="refresh-results-btn" class="btn-small">Refresh</button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="results-container">
+                <div class="results-header">
+                    <h2 id="results-election-title">General Election 2024 - Results</h2>
+                    <div class="results-info">
+                        <p><strong id="results-time-label">Last Updated:</strong> <span id="last-updated-time">Loading...</span></p>
+                        <p><strong id="total-votes-label">Total Votes Cast:</strong> <span id="total-votes-count">0</span></p>
+                    </div>
+                </div>
+                
+                <div class="results-content">
+                    <div class="chart-section">
+                        <h3 id="results-chart-title">Results Visualization</h3>
+                        <div class="chart-container">
+                            <canvas id="results-chart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="table-section">
+                        <h3 id="results-table-title">Detailed Results</h3>
+                        <div class="table-container">
+                            <table id="results-table">
+                                <thead>
+                                    <tr>
+                                        <th>Rank</th>
+                                        <th>Candidate</th>
+                                        <th>Party</th>
+                                        <th>Symbol</th>
+                                        <th>Votes</th>
+                                        <th>Percentage</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="results-table-body">
+                                    <!-- Results will be loaded here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="winner-section" id="winner-section">
+                        <h3 id="winner-title">Leading Candidate</h3>
+                        <div class="winner-card">
+                            <div class="winner-symbol" id="winner-symbol">🏆</div>
+                            <div class="winner-details">
+                                <h4 id="winner-name">No votes cast yet</h4>
+                                <p id="winner-party">No results available</p>
+                                <div class="winner-stats">
+                                    <span id="winner-votes">0 votes</span>
+                                    <span id="winner-percentage">0%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="footer">
+            <p>Election Results - Secure Digital Voting System &copy; 2024</p>
+            <p class="disclaimer-small">Demo Digital EVM System – For Educational and Practice Use Only. Not for real government elections.</p>
+        </footer>
+    </div>
+
+    <!-- Password Modal for Results -->
+    <div id="results-password-modal" class="modal">
+        <div class="modal-content">
+            <h2>Results Authentication</h2>
+            <p>Please enter the admin password to view results before election end time.</p>
+            <div class="form-group">
+                <label for="results-password">Admin Password</label>
+                <input type="password" id="results-password" placeholder="Enter admin password">
+                <div class="error-message" id="results-password-error"></div>
+            </div>
+            <div class="modal-actions">
+                <button id="submit-results-password" class="btn-primary">View Results</button>
+                <button id="cancel-results-password" class="btn-secondary">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/result.js"></script>
+</body>
+</html>
