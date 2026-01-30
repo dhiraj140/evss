@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital EVM System - Voting</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="icon" href="assets/evm-icon.png" type="image/png">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="watermark">Demo Digital EVM System</div>
+            <h1 id="voting-title">Cast Your Vote</h1>
+            <div class="voter-info">
+                <span id="voter-display">Voter ID: <strong id="current-voter-id">N/A</strong></span>
+                <button id="logout-btn" class="btn-small">Logout</button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="voting-container">
+                <div class="election-header">
+                    <h2 id="current-election-title">General Election 2024</h2>
+                    <div class="timer" id="election-timer">
+                        <span id="timer-label">Time Remaining:</span>
+                        <span id="countdown">--:--:--</span>
+                    </div>
+                </div>
+                
+                <div class="candidates-grid" id="candidates-container">
+                    <!-- Candidates will be dynamically loaded here -->
+                </div>
+                
+                <div class="selected-candidate" id="selected-candidate-section">
+                    <h3 id="selected-title">Your Selected Candidate</h3>
+                    <div class="selected-info" id="selected-info">
+                        <p id="no-selection-msg">No candidate selected yet</p>
+                    </div>
+                </div>
+                
+                <div class="voting-actions">
+                    <button id="confirm-vote-btn" class="btn-primary" disabled>Confirm Vote</button>
+                    <button id="reset-selection-btn" class="btn-secondary">Reset Selection</button>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="footer">
+            <p id="footer-text-vote">Secure Digital Voting System &copy; 2024</p>
+        </footer>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirm-modal" class="modal">
+        <div class="modal-content confirm-modal">
+            <h2 id="confirm-title">Confirm Your Vote</h2>
+            <div class="confirm-details">
+                <p id="confirm-text">You are about to vote for:</p>
+                <div class="candidate-card selected" id="confirm-candidate">
+                    <!-- Candidate details will be shown here -->
+                </div>
+                <p class="warning" id="confirm-warning">This action cannot be undone. You can vote only once.</p>
+            </div>
+            <div class="modal-actions">
+                <button id="final-confirm-btn" class="btn-primary">Yes, Cast My Vote</button>
+                <button id="cancel-vote-btn" class="btn-secondary">No, Go Back</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content success-modal">
+            <div class="success-icon">✓</div>
+            <h2 id="success-title">Vote Cast Successfully!</h2>
+            <p id="success-text">Your vote has been recorded. Thank you for participating in the democratic process.</p>
+            <button id="close-success-btn" class="btn-primary">OK</button>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/vote.js"></script>
+</body>
+</html>
